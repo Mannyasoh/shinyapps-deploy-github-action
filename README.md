@@ -103,3 +103,6 @@ Any contributions are appreciated. In particular, we would appreciate help imple
 ## References
 
 This action was inspired by <https://blog.rmhogervorst.nl/blog/2021/02/27/deploy-to-shinyapps-io-from-github-actions/>.
+
+Forked from [BDSI, University of Twente's shinyapps-deploy-github-action](https://github.com/...).  
+Modified by Emmanuel Asoh for enhanced functionality.
