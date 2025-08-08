@@ -1,4 +1,4 @@
-name: "Deploy to shinyapps.io"
+name: "Mannyasoh-firebird deploy to shinyapps.io"
 description: "Deploy R shiny apps to shinyapps.io."
 branding:
   icon: cast
