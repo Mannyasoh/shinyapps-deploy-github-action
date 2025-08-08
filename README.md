@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: deploy
-        uses: BDSI-Utwente/shinyapps-deploy-github-action@v1
+        uses: Mannyasoh/shinyapps-deploy-github-action@v1.0
         with:
           # account and application name (https://<accountName>.shinyapps.io/<appName>)
           appName: your-application-name
@@ -33,6 +33,7 @@ jobs:
           # token and secret obtained from https://www.shinyapps.io/admin/#/tokens
           accountToken: ${{ secrets.SHINYAPPS_TOKEN }}
           accountSecret: ${{ secrets.SHINYAPPS_SECRET }}
+          forceUpdate: false # defaults to true
 ```
 
 ## Inputs
@@ -84,6 +85,9 @@ _[optional]_  user-friendly title for the application
 
 _[optional]_  level of verbosity of rsconnect::deployApp(). Defaults to `normal`, other options are `quiet` or `verbose`.
 
+#### forceUpdate
+_[optional]_ this parameter allows you modify or update your deployment. defaults to true. if the app exists or is already deployed, this should allow you override the deployment hereby creating an update.
+
 ## Packages
 
 This action uses the rocker/shiny-verse:latest docker image as a base. This image includes recent versions of most package commonly used in shiny apps and the tidyverse.
@@ -92,17 +96,8 @@ If an `renv.lock` file is present in the repository root, `renv::restore()` will
 
 We highly recommend using renv to manage dependencies.
 
-## Contributing
-
-Any contributions are appreciated. In particular, we would appreciate help implementing the following;
-
-- support for packrat, other R environment management packages
-- support for generic rsconnect servers in addition to shinyapps.io
-- support for caching of dependencies
-
 ## References
 
 This action was inspired by <https://blog.rmhogervorst.nl/blog/2021/02/27/deploy-to-shinyapps-io-from-github-actions/>.
 
-Forked from [BDSI, University of Twente's shinyapps-deploy-github-action](https://github.com/...).  
 Modified by Emmanuel Asoh for enhanced functionality.
